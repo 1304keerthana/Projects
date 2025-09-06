@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html ng-app="recipeApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Explorer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 2px 2px #000;
+        }
+
+        header input {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 20px;
+            border: none;
+            width: 250px;
+            margin-top: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .recipe-card {
+            background: #fff;
+            margin: 15px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            width: 250px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .recipe-card h2 {
+            font-size: 1.5em;
+            margin: 10px;
+            color: #ff4e50;
+        }
+
+        .recipe-card p {
+            font-size: 0.9em;
+            margin: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+    </style>
+</head>
+<body ng-controller="RecipeController">
+    <header>
+        <h1>🍲 Recipe Explorer</h1>
+        <input type="text" ng-model="searchText" placeholder="Search recipes..." />
+    </header>
+
+    <main>
+        <div class="recipe-card" ng-repeat="recipe in recipes | filter:searchText">
+            <img ng-src="{{recipe.image}}" alt="{{recipe.name}}">
+            <h2>{{recipe.name}}</h2>
+            <p><strong>Cuisine:</strong> {{recipe.cuisine}}</p>
+            <p>{{recipe.description}}</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Recipe Explorer</p>
+    </footer>
+
+    <script>
+        var app = angular.module('recipeApp', []);
+        app.controller('RecipeController', ['$scope', function($scope) {
+            $scope.recipes = [
+                {
+                    name: "Spaghetti Carbonara",
+                    cuisine: "Italian",
+                    description: "Classic pasta with creamy egg sauce and pancetta.",
+                    image: "https://tse3.mm.bing.net/th/id/OIP.QfyOOANYu2AbD6WApUJE4QHaFj?pid=Api&P=0&h=180"
+                },
+                {
+                    name: "Sushi Rolls",
+                    cuisine: "Japanese",
+                    description: "Delicious sushi rolls with fresh fish and vegetables.",
+                    image: "https://tse2.mm.bing.net/th/id/OIP.-xAKFHEt0LG75gBAU5sW5gHaHa?pid=Api&P=0&h=180"
+                },
+                {
+                    name: "Tacos",
+                    cuisine: "Mexican",
+                    description: "Soft tortillas filled with meat, cheese, and veggies.",
+                    image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+                },
+                {
+                    name: "Paneer Butter Masala",
+                    cuisine: "Indian",
+                    description: "Creamy tomato-based curry with cubes of paneer.",
+                    image: "https://tse4.mm.bing.net/th/id/OIP.m4hN-dPp7Jvr_7e5lb3p0gHaGn?pid=Api&P=0&h=180"
+                }
+            ];
+        }]);
+    </script>
+</body>
+</html>
