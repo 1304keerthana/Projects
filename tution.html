@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keerthana Tuition Centre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: plum; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        form {
+            width: 50%;
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .infrastructure, .teacher, .contact, .location-box {
+            width: 50%;
+            max-width: 600px;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .infrastructure img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .teacher img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+        }
+
+        details[open] img {
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Keerthana Tuition Centre</h2>
+    <form action="submit.php" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="course">Select Course:</label>
+        <select id="course" name="course" required>
+            <option value="">-- Select Course --</option>
+            <option value="math">Mathematics</option>
+            <option value="science">Science</option>
+            <option value="english">English</option>
+            <option value="computer">Computer Science</option>
+        </select>
+
+        <label for="timing">Select Class Timing:</label>
+        <select id="timing" name="timing" required>
+            <option value="">-- Select Timing --</option>
+            <option value="morning">Morning (9 AM - 11 AM)</option>
+            <option value="afternoon">Afternoon (2 PM - 4 PM)</option>
+            <option value="evening">Evening (6 PM - 8 PM)</option>
+        </select>
+
+        <label for="message">Additional Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="infrastructure">
+        <h3>Our Infrastructure</h3>
+        <img src="https://i.pinimg.com/originals/1c/51/eb/1c51ebdb823096f053304444de3a0acb.png" alt="Classroom Image">
+    </div>
+
+    <div class="location-box">
+        <h3>Location📍</h3>
+        <a href="https://maps.app.goo.gl/iJzfaU4iW7r7KRZd8?g_st=aw" target="_blank">View My Location</a>
+    </div>
+
+    <div class="teacher">
+        <details>
+            <summary>Meet Your Teacher</summary>
+            <img src="C:\Users\S.KEERTHANA\OneDrive\ドキュメント\Prolog\WhatsApp Image 2025-03-24 at 10.50.41_ce5e6acf.jpg" alt="Teacher Image">
+        </details>
+    </div>
+
+    <div class="contact">
+        <p>📞 Contact the Teacher: <a href="tel:+919876543210">+91 98765 43210</a></p>
+    </div>
+</div>
+
+</body>
+</html>

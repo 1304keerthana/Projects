@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML FORM</title>
+  <style>
+    body {
+      background-color: pink;
+      margin: 0;
+      padding: 0;
+    }
+    form {
+      background-color: pink;
+      padding: 30px;
+      width: 300px;
+      text-align:left;
+      font-family: Arial, sans-serif;
+    }
+
+    input, select, textarea {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<form>
+  <label>First Name:</label><br>
+  <input type="text" name="firstname" value="keerthana" /><br>
+
+  <label>Password:</label><br>
+  <input type="password" /><br>
+
+  <label>Choose a course:</label><br>
+  <select>
+    <option>CS with AI</option>
+    <option>B.Com</option>
+    <option>BBA</option>
+    <option>MBA</option>
+  </select><br>
+
+  <h3>Select Gender</h3>
+  <label><input type="radio" name="gender" /> Male</label><br>
+  <label><input type="radio" name="gender" /> Female</label><br>
+  <label><input type="radio" name="gender" /> Others</label><br>
+
+  <h3>Select Skills</h3>
+  <label><input type="checkbox" /> Python</label>
+  <label><input type="checkbox" /> C++</label>
+  <label><input type="checkbox" /> Java</label>
+  <br><br>
+  <label>Select a colour:</label><br>
+  <input type="color" /><br>
+
+  <label>Select a date:</label><br>
+  <input type="date" /><br>
+
+  <label>Upload your file:</label><br>
+  <input type="file" /><br>
+
+  <label>Feedback:</label><br>
+  <textarea cols="30" rows="5"></textarea><br>
+
+  <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
