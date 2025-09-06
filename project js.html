@@ -4,32 +4,85 @@
   <meta charset="UTF-8">
   <title>Simple Calculator</title>
   <style>
+    /* Background & Body */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #e6f7ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6CC1FF, #3A8DFF);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
+
+    /* Calculator Container */
     .calculator {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      width: 300px;
-    }
-    input, select, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-    .result {
-      margin-top: 15px;
-      font-weight: bold;
-      color: green;
+      background: #ffffffdd; /* semi-transparent white */
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      width: 320px;
       text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .calculator:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #3A8DFF;
+    }
+
+    /* Inputs & Select */
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border: 2px solid #3A8DFF;
+      box-shadow: 0 0 8px rgba(58,141,255,0.3);
+    }
+
+    /* Button */
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #3A8DFF;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: #6CC1FF;
+      transform: translateY(-2px);
+    }
+
+    /* Result Display */
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #0A3D62;
+      padding: 10px;
+      border-radius: 8px;
+      background: #d6f0ff;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+      min-height: 24px;
     }
   </style>
 </head>
